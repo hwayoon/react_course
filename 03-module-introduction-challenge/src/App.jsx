@@ -5,7 +5,7 @@ import Results from "./components/Results.jsx";
 
 function App() {
   const [userInput, setUserInput] = useState({
-    initialInvestment: 15000,
+    initialInvestment: 10000,
     annualInvestment: 1200,
     expectedReturn: 6,
     duration: 10,
@@ -26,9 +26,7 @@ function App() {
     <>
       <Header />
       <UserInput userInput={userInput} onChange={handleChange} />
-      {!inputIsValid && (
-        <p className="center">Please enter a duration greater than zero.</p>
-      )}
+      {!inputIsValid && <p className="center">0보다 큰 수 입력하세요.</p>}
       {inputIsValid && <Results input={userInput} />}
     </>
   );
